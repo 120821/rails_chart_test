@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Orders</h1>
+<%= line_chart Order.group_by_day(:created_at).count %>
+<%= pie_chart Order.group(:status).count %>
 
 <div id="orders">
   <% @orders.each do |order| %>
