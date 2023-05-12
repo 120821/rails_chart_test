@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>环形图</title>
+    <style>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+  .chart {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+  }
+
+  .chart svg {
+    transform: rotate(-90deg);
+  }
+
+  .chart circle {
+    fill: none;
+    stroke-width: 10;
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+  }
+
+  .chart .warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+  }
+
+  .chart .info {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+  }
+
+  .chart .icon {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    transform: translateX(-50%);
+  }
+
+  .chart .text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="chart">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" stroke="gray" />
+          <circle cx="50" cy="50" r="40" stroke="red" stroke-dashoffset="-132" />
+        </svg>
+        <div class="warning">预警</div>
+        <div class="info">
+          库存量低于30%
+          <div class="icon"></div>
+          <div class="text">牛奶</div>
+        </div>
+      </div>
+      <div class="chart">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" stroke="gray" />
+          <circle cx="50" cy="50" r="40" stroke="blue" stroke-dashoffset="-44" />
+        </svg>
+        <div class="warning">充足</div>
+        <div class="info">库存量高于80%</div>
+      </div>
+      <div class="chart">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" stroke="gray" />
+          <circle cx="50" cy="50" r="40" stroke="orange" stroke-dashoffset="-176" />
+        </svg>
+        <div class="warning">不足</div>
+        <div class="info">
+          库存量低于60%
+          <div class="icon"></div>
+          <div class="text">牛奶</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
